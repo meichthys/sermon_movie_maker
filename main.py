@@ -19,7 +19,7 @@ def main():
               -t {audio_length} -pix_fmt yuv420p \
               -vf "drawtext=fontcolor={text_color}:\
                    fontfile={font_file_path}:\
-                   text='{title}\n\n{speaker}\n\n{date}':\
+                   text='{title}\n{speaker}\n{date}':\
                    fontsize={font_size}:\
                    alpha={text_alpha}:\
                    x={horizontal_position}:y={vertical_position}:\
