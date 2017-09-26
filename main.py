@@ -1,99 +1,81 @@
-#!/Users/Matt/Development/ENVS/sermon_movie_maker/bin/python
-from mutagen.mp3 import MP3
-import settings
+"""Converts static jpg + mp3 into an mp4"""
 import os
+
 from PIL import Image
+from mutagen.mp3 import MP3
+
+import settings
 
 
 def main():
-
-    image = str(raw_input("Enter full path of image file: ")).strip()
-    audio_file_name = str(raw_input("Enter full path of mp3 file: ")).strip()
-    output_file_name = str(raw_input("Enter desired name of output file: "))
+    '''Runs Sermon Movie Maker'''
+    # Get Input
+    image = input("Enter full path of image file: ").strip()
+    audio_file_name = input("Enter full path of mp3 file: ").strip()
+    output_file_name = input("Enter desired name of output file: ")
     audio_length = MP3(audio_file_name).info.length
-    title = str(raw_input("Enter title of sermon: "))
-    speaker = str(raw_input("Enter speaker of sermon: "))
-    date = str(raw_input("Enter date of sermon: "))
+    title = input("Enter title of sermon: ")
+    speaker = input("Enter speaker of sermon: ")
+    date = input("Enter date of sermon: ")
 
-    with open(os.path.dirname(os.path.realpath(__file__)) +
-              "/text/title.txt", 'wb') as title_file:
+    title_path = f"{os.path.realpath('')}/text/title.txt"
+    speaker_path = f"{os.path.realpath('')}/text/speaker.txt"
+    date_path = f"{os.path.realpath('')}/text/date.txt"
+
+    # Save Text
+    with open(title_path, 'w') as title_file:
         title_file.write(title + "\n")
-    with open(os.path.dirname(os.path.realpath(__file__)) +
-              "/text/speaker.txt", 'wb') as speaker_file:
+    with open(speaker_path, 'w') as speaker_file:
         speaker_file.write(speaker + "\n")
-    with open(os.path.dirname(os.path.realpath(__file__)) +
-              "/text/date.txt", 'wb') as date_file:
+    with open(date_path, 'w') as date_file:
         date_file.write(date)
 
+
+    # Resize Image
     resized_image = Image.open(image)
     resized_image.thumbnail([1280, 1280])
-    resized_image.save(os.path.dirname(os.path.relpath(__file__)) +
-                       '/image/image.jpg')
+    resized_image.save(f"{os.path.realpath('')}/image/image.jpg")
 
-    os.system("""ffmpeg -y -loop 1 -i "{image}"\
+    # Run conversion
+    os.system(f"""ffmpeg -y -loop 1 -i "{image}"\
               -i "{audio_file_name}"\
               -t {audio_length} -pix_fmt yuv420p \
-              -vf "drawtext=fontcolor={text_color}:\
-                   fontfile={font_file_path}:\
-                   textfile='{title}':\
-                   fontsize={font_size}:\
-                   bordercolor={border_color}:\
-                   borderw={border_width}:\
-                   alpha={text_alpha}:\
-                   x={horizontal_position}:y={vertical_position}-text_h:\
-                   box={box}:\
-                   boxborderw={box_border_width}:\
-                   boxcolor={box_color},\
-                  drawtext=fontcolor={text_color}:\
-                   fontfile={font_file_path}:\
-                   textfile='{speaker}':\
-                   fontsize={font_size}:\
-                   bordercolor={border_color}:\
-                   borderw={border_width}:\
-                   alpha={text_alpha}:\
-                   x={horizontal_position}:y={vertical_position}:\
-                   box={box}:\
-                   boxborderw={box_border_width}:\
-                   boxcolor={box_color},\
-                  drawtext=fontcolor={text_color}:\
-                   fontfile={font_file_path}:\
-                   textfile='{date}':\
-                   fontsize={font_size}:\
-                   bordercolor={border_color}:\
-                   borderw={border_width}:\
-                   alpha={text_alpha}:\
-                   x={horizontal_position}:y={vertical_position}+text_h:\
-                   box={box}:\
-                   boxborderw={box_border_width}:\
-                   boxcolor={box_color},\
-                  scale={scale_width}:-2"\
-              "{output_location}/{output_file_name}{video_output_type}"\
-              """.format(audio_file_name=audio_file_name,
-                         border_color=settings.border_color,
-                         border_width=settings.border_width,
-                         box=settings.box,
-                         box_border_width=settings.box_border_width,
-                         box_color=settings.box_color,
-                         date=os.path.dirname(os.path.realpath(__file__)) +
-                         "/text/date.txt",
-                         font_file_path=settings.font_file_path,
-                         font_size=settings.font_size,
-                         horizontal_position=settings.horizontal_position,
-                         image=os.path.dirname(os.path.realpath(__file__)) +
-                         "/image/image.jpg",
-                         audio_length=audio_length,
-                         output_file_name=output_file_name,
-                         output_location=settings.output_location,
-                         scale_width=settings.scale_width,
-                         speaker=os.path.dirname(os.path.realpath(__file__)) +
-                         "/text/speaker.txt",
-                         text_alpha=settings.text_alpha,
-                         text_color=settings.text_color,
-                         title=os.path.dirname(os.path.realpath(__file__)) +
-                         "/text/title.txt",
-                         vertical_position=settings.vertical_position,
-                         video_output_type=settings.video_output_type
-                         )
+              -vf "drawtext=fontcolor={settings.text_color}:\
+                   fontfile={settings.font_file_path}:\
+                   textfile='{title_path}':\
+                   fontsize={settings.font_size}:\
+                   bordercolor={settings.border_color}:\
+                   borderw={settings.border_width}:\
+                   alpha={settings.text_alpha}:\
+                   x={settings.horizontal_position}:y={settings.vertical_position}-text_h:\
+                   box={settings.box}:\
+                   boxborderw={settings.box_border_width}:\
+                   boxcolor={settings.box_color},\
+                  drawtext=fontcolor={settings.text_color}:\
+                   fontfile={settings.font_file_path}:\
+                   textfile='{speaker_path}':\
+                   fontsize={settings.font_size}:\
+                   bordercolor={settings.border_color}:\
+                   borderw={settings.border_width}:\
+                   alpha={settings.text_alpha}:\
+                   x={settings.horizontal_position}:y={settings.vertical_position}:\
+                   box={settings.box}:\
+                   boxborderw={settings.box_border_width}:\
+                   boxcolor={settings.box_color},\
+                  drawtext=fontcolor={settings.text_color}:\
+                   fontfile={settings.font_file_path}:\
+                   textfile='{date_path}':\
+                   fontsize={settings.font_size}:\
+                   bordercolor={settings.border_color}:\
+                   borderw={settings.border_width}:\
+                   alpha={settings.text_alpha}:\
+                   x={settings.horizontal_position}:y={settings.vertical_position}+text_h:\
+                   box={settings.box}:\
+                   boxborderw={settings.box_border_width}:\
+                   boxcolor={settings.box_color},\
+                  scale={settings.scale_width}:-2"\
+              "{settings.output_location}/{output_file_name}{settings.video_output_type}"\
+              """
               )
 
 
