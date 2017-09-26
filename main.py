@@ -10,8 +10,8 @@ import settings
 def main():
     '''Runs Sermon Movie Maker'''
     # Get Input
-    image = input("Enter full path of image file: ").strip()
-    audio_file_name = input("Enter full path of mp3 file: ").strip()
+    image = input("Enter full path of image file: ").strip().replace("\\", "")
+    audio_file_name = input("Enter full path of mp3 file: ").strip().replace("\\","")
     output_file_name = input("Enter desired name of output file: ")
     audio_length = MP3(audio_file_name).info.length
     title = input("Enter title of sermon: ")
