@@ -22,6 +22,7 @@ def main():
     speaker_path = f"{os.path.realpath('')}/text/speaker.txt"
     date_path = f"{os.path.realpath('')}/text/date.txt"
     image_path = f"{os.path.realpath('')}/image/image.jpg"
+
     # Save Text & create containing folder if it doesn't exist
     os.makedirs(os.path.dirname(title_path), exist_ok=True)
     with open(title_path, 'w') as title_file:
