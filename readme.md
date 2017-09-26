@@ -11,12 +11,19 @@ A python script that converts an mp3 file + an image file into a mp4 video with 
 
 ## How to Use it
 1. When prompted, enter the following information:
+
 	a. Full path to image file (you can drag the file into the terminal)
+
 	b. Full path to mp3 file (you can drag the file into the terminal)
+
 	c. Name of the mp4 file to be generated (excluding the extension)
+
 	d. First line of text (Sermon Title)
+
 	e. Second line of text (Speaker Name)
+
 	f. Third line of text (Date)
+
 
 2. The program will then get to work on exporting the mp4 file to the location set in the settings file.
 
