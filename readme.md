@@ -1,6 +1,7 @@
 # SERMON MOVIE MAKER
 ------------------
 Creator: MeIchthys
+
 License: Unlicensed (See LICENSE.txt)
 
 
