@@ -1,6 +1,7 @@
 #Directories
-text/
+.venv/
 image/
+text/
 
 #Files
 *.pyc
