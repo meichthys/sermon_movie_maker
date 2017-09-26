@@ -1,8 +1,6 @@
 #Directories
 text/
 image/
-.vscode/
 
 #Files
 .pyc
-.gitignore
