@@ -21,8 +21,9 @@ def main():
     title_path = f"{os.path.realpath('')}/text/title.txt"
     speaker_path = f"{os.path.realpath('')}/text/speaker.txt"
     date_path = f"{os.path.realpath('')}/text/date.txt"
-
-    # Save Text
+    image_path = f"{os.path.realpath('')}/image/image.jpg"
+    # Save Text & create containing folder if it doesn't exist
+    os.makedirs(os.path.dirname(title_path), exist_ok=True)
     with open(title_path, 'w') as title_file:
         title_file.write(title + "\n")
     with open(speaker_path, 'w') as speaker_file:
@@ -31,10 +32,11 @@ def main():
         date_file.write(date)
 
 
-    # Resize Image
+    # Resize Image & create containing folder if it doesn't exist
     resized_image = Image.open(image)
     resized_image.thumbnail([1280, 1280])
-    resized_image.save(f"{os.path.realpath('')}/image/image.jpg")
+    os.makedirs(os.path.dirname(image_path), exist_ok=True)
+    resized_image.save(image_path)
 
     # Run conversion
     os.system(f"""ffmpeg -y -loop 1 -i "{image}"\
