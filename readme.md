@@ -10,7 +10,10 @@ A python script that converts an mp3 file + an image file into a mp4 video with 
 
 
 ## How to Use it
-1. When prompted, enter the following information:
+
+1. Double click the SermonMovieMaker app in the 'dist' directory.
+
+2. When prompted, enter the following information:
 
 	a. Full path to image file (you can drag the file into the terminal)
 
@@ -25,7 +28,7 @@ A python script that converts an mp3 file + an image file into a mp4 video with 
 	f. Third line of text (Date)
 
 
-2. The program will then get to work on exporting the mp4 file to the location set in the settings file.
+3. The program will then get to work on exporting the mp4 file to the location set in the settings file.
 
 Note: Other settings can be changed in the settings.py file to modify the appearance of the overlaid text, location of the font file, output directory, etc.
 
