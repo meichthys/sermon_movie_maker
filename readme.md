@@ -5,8 +5,11 @@ Creator: MeIchthys
 License: Unlicensed (See LICENSE.txt)
 
 
-## What is it?
-A python script that converts an mp3 file + an image file into a mp4 video with a static image along with sermon details as an overlay to the image. These videos can then be uploaded to the church website and/or the church facebook page.
+## History
+After searching for a program that could convert an mp3 into an mp4, I decided to build my own script that could do it automatically. Thus Sermon Movie Maker was born.
+
+## What is Does
+Converts an mp3 file + an image file + text descriptions into a mp4 video with a static image and text.
 
 
 ## How to Use it
@@ -30,8 +33,11 @@ A python script that converts an mp3 file + an image file into a mp4 video with 
 
 3. The program will then get to work on exporting the mp4 file to the location set in the settings file.
 
-Note: Other settings can be changed in the settings.py file to modify the appearance of the overlaid text, location of the font file, output directory, etc.
+
+## Configuration
+Settings can be changed in the settings.py file to modify the appearance of the overlaid text, location of the font file, output directory, etc.
 
 
-## Requirements
+## Development Requirements
+Python 3.6
 See requirements.txt
