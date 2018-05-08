@@ -1,6 +1,7 @@
 """Converts static jpg + mp3 into an mp4"""
 import os
 
+from imagesoup import ImageResult, ImageSoup
 from PIL import Image
 from mutagen.mp3 import MP3
 
@@ -10,7 +11,24 @@ import settings
 def main():
     '''Runs Sermon Movie Maker'''
     # Get Input
-    image = input("Enter full path of image file: ").strip().replace("\\", "")
+    image = input("Enter full path of image file or search term: ").strip().replace("\\", "")
+    if not os.path.isfile(image):
+        results = ImageSoup().search(image, aspect_ratio='wide', image_size="800x600+")
+        result = 0
+        not_ready = True
+        while not_ready:
+            img = ImageResult(results[result].URL)
+            img.reduce(720)
+            img.to_file("upload_image")
+            img.show()
+            not_ready = input(" \
+                OPTIONS: \n \
+                -------- \n \
+                Press ENTER to use the displayed image. \n \
+                Press 1 then ENTER to see the next image. \n \
+                ")
+            result += 1
+        image = "upload_image"
     audio_file_name = input("Enter full path of mp3 file: ").strip().replace("\\","")
     output_file_name = input("Enter desired name of output file: ")
     audio_length = MP3(audio_file_name).info.length
@@ -31,7 +49,6 @@ def main():
         speaker_file.write(speaker + "\n")
     with open(date_path, 'w') as date_file:
         date_file.write(date)
-
 
     # Resize Image & create containing folder if it doesn't exist
     resized_image = Image.open(image)
@@ -81,6 +98,9 @@ def main():
               """
               )
 
+    #Remove image file if downloaded to local directory
+    if os.path.isfile(image):
+        os.remove(image)
 
 if __name__ == "__main__":
     main()

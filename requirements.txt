@@ -1,4 +1,5 @@
 # Packages that can be insalled with 'pip install -r requirements.txt'
+imagesoup
 mutagen==1.35.1
 Pillow==3.4.2
 pyinstaller==3.3
