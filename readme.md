@@ -11,14 +11,18 @@ After searching for a program that could convert an mp3 into an mp4, I decided t
 ## What is Does
 Converts an mp3 file + an image file + text descriptions into a mp4 video with a static image and text.
 
+## How to install/deploy
+Run the following command from within the scripts directory to build a MacOS app that can be run like any other mac app:
+
+`sh buildapp.sh`
 
 ## How to Use it
 
-1. Double click the SermonMovieMaker app in the 'dist' directory.
+1. Double click the SermonMovieMaker app in the 'dist' directory. This app is stand-alone and can be moved anywhere.
 
 2. When prompted, enter the following information:
 
-	a. Full path to image file (you can drag the file into the terminal)
+	a. Full path to image file (you can drag the file into the terminal) or image search term.
 
 	b. Full path to mp3 file (you can drag the file into the terminal)
 
