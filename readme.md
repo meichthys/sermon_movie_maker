@@ -1,6 +1,6 @@
 # SERMON MOVIE MAKER
 
-![Screenshot](image/screenshot.png "Screenshot")
+![Screenshot](screenshot.png "Screenshot")
 
 
 Creator: MeIchthys
