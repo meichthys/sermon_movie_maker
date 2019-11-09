@@ -10,6 +10,8 @@ pyinstaller \
     --name "SermonMovieMaker" \
     --console \
     --clean \
+    --add-binary='/System/Library/Frameworks/Tk.framework/Tk':'tk' \
+    --add-binary='/System/Library/Frameworks/Tcl.framework/Tcl':'tcl' \
     ../main.py
 
 # Cleanup uneeded files
