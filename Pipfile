@@ -6,7 +6,7 @@ name = "pypi"
 [packages]
 Pillow = "*"
 mutagen = "*"
-PyInstaller = "*"
+PyInstaller = {file = "https://github.com/pyinstaller/pyinstaller/archive/develop.tar.gz"}
 pipenv = "*"
 
 [dev-packages]

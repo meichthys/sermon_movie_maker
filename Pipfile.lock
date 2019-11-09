@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b5683511defb9b8a9616915bc2586aca59ec1ec65630e9af74b13c54d8e1c3a2"
+            "sha256": "d2c8b9ba4e5ebae7b619420e6c3539dc70cf775653bc2210d1f73b5ebb88f747"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,13 +16,6 @@
         ]
     },
     "default": {
-        "altgraph": {
-            "hashes": [
-                "sha256:d6814989f242b2b43025cba7161fc1b8fb487a62cd49c49245d6fd01c18ac997",
-                "sha256:ddf5320017147ba7b810198e0b6619bd7b5563aa034da388cea8546b877f9b0c"
-            ],
-            "version": "==0.16.1"
-        },
         "certifi": {
             "hashes": [
                 "sha256:e4f3620cfea4f83eedc95b24abd9cd56f3c4b146dd0177e83a21b4eb49e21e50",
@@ -30,17 +23,11 @@
             ],
             "version": "==2019.9.11"
         },
-        "macholib": {
-            "hashes": [
-                "sha256:ac02d29898cf66f27510d8f39e9112ae00590adb4a48ec57b25028d6962b1ae1",
-                "sha256:c4180ffc6f909bf8db6cd81cff4b6f601d575568f4d5dee148c830e9851eb9db"
-            ],
-            "version": "==1.11"
-        },
         "mutagen": {
             "hashes": [
                 "sha256:bb61e2456f59a9a4a259fbc08def6d01ba45a42da8eeaa97d00633b0ec5de71c"
             ],
+            "index": "pypi",
             "version": "==1.42.0"
         },
         "pillow": {
@@ -76,6 +63,7 @@
                 "sha256:e0697b826da6c2472bb6488db4c0a7fa8af0d52fa08833ceb3681358914b14e5",
                 "sha256:e9a3edd5f714229d41057d56ac0f39ad9bdba6767e8c888c951869f0bdd129b0"
             ],
+            "index": "pypi",
             "version": "==6.2.1"
         },
         "pipenv": {
@@ -84,13 +72,11 @@
                 "sha256:7df8e33a2387de6f537836f48ac6fcd94eda6ed9ba3d5e3fd52e35b5bc7ff49e",
                 "sha256:a673e606e8452185e9817a987572b55360f4d28b50831ef3b42ac3cab3fee846"
             ],
+            "index": "pypi",
             "version": "==2018.11.26"
         },
         "pyinstaller": {
-            "hashes": [
-                "sha256:ee7504022d1332a3324250faf2135ea56ac71fdb6309cff8cd235de26b1d0a96"
-            ],
-            "version": "==3.5"
+            "file": "https://github.com/pyinstaller/pyinstaller/archive/develop.tar.gz"
         },
         "virtualenv": {
             "hashes": [
