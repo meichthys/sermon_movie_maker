@@ -1,10 +1,10 @@
 """Converts static jpg + mp3 into an mp4"""
 import os
 
+from PIL import Image
 from mutagen.mp3 import MP3
 
 import settings
-
 
 def main():
     '''Runs Sermon Movie Maker'''
