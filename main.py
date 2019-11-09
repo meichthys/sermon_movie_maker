@@ -1,8 +1,6 @@
 """Converts static jpg + mp3 into an mp4"""
 import os
 
-from imagesoup import ImageResult, ImageSoup
-from PIL import Image
 from mutagen.mp3 import MP3
 
 import settings
@@ -11,24 +9,11 @@ import settings
 def main():
     '''Runs Sermon Movie Maker'''
     # Get Input
-    image = input("Enter full path of image file or search term: ").strip().replace("\\", "")
-    if not os.path.isfile(image):
-        results = ImageSoup().search(image, aspect_ratio='wide', image_size="800x600+")
-        result = 0
-        not_ready = True
-        while not_ready:
-            img = ImageResult(results[result].URL)
-            img.reduce(720)
-            img.to_file("upload_image")
-            img.show()
-            not_ready = input(" \
-                OPTIONS: \n \
-                -------- \n \
-                Press ENTER to use the displayed image. \n \
-                Press 1 then ENTER to see the next image. \n \
-                ")
-            result += 1
-        image = "upload_image"
+    image_file = False
+    while not image_file:
+        image = input("Enter full path of jpg image file: ").strip().replace("\\", "")
+        if os.path.isfile(image):
+            image_file = True
     audio_file_name = input("Enter full path of mp3 file: ").strip().replace("\\","")
     output_file_name = input("Enter desired name of output file: ")
     audio_length = MP3(audio_file_name).info.length

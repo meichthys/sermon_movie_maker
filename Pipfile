@@ -4,9 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-imagesoup = "*"
-mutagen = "*"
 Pillow = "*"
+mutagen = "*"
 PyInstaller = "*"
 pipenv = "*"
 

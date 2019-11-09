@@ -2,7 +2,6 @@
 
 ![Screenshot](screenshot.png "Screenshot")
 
-
 Creator: MeIchthys
 License: MIT (See LICENSE.txt)
 
@@ -29,18 +28,17 @@ Pyinstaller can support other platforms as well, so it should be very easy to po
 2. When prompted, enter the following information:
 
     - Full path to image file (you can drag the file into the terminal) or image search term.
-	- Full path to mp3 file (you can drag the file into the terminal)
-  	- Name of the mp4 file to be generated (excluding the extension)
-  	- First line of text (Sermon Title)
-  	- Second line of text (Speaker Name)
-  	- Third line of text (Date)
+    - Full path to mp3 file (you can drag the file into the terminal)
+    - Name of the mp4 file to be generated (excluding the extension)
+    - First line of text (Sermon Title)
+    - Second line of text (Speaker Name)
+    - Third line of text (Date)
 
 3. The program will then get to work on exporting the mp4 file to the location set in the settings file.
 
 ## Configuration
 
 Settings can be changed in the settings.py file to modify the appearance of the overlaid text, location of the font file, output directory, etc.
-
 
 ## Development Requirements
 
