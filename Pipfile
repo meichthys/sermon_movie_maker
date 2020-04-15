@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-Pillow = "*"
+Pillow = "==6.2.2"
 mutagen = "*"
 PyInstaller = {file = "https://github.com/pyinstaller/pyinstaller/archive/develop.tar.gz"}
 
