@@ -7,9 +7,11 @@ name = "pypi"
 Pillow = "*"
 mutagen = "*"
 PyInstaller = {file = "https://github.com/pyinstaller/pyinstaller/archive/develop.tar.gz"}
-pipenv = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.8"
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
