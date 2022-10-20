@@ -3,7 +3,8 @@
 ![Screenshot](screenshot.png "Screenshot")
 
 Creator: MeIchthys
-License: MIT (See LICENSE.txt)
+
+License: MIT (See [LICENSE.txt](LICENSE.txt))
 
 ## History
 
