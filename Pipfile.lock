@@ -18,10 +18,10 @@
     "default": {
         "altgraph": {
             "hashes": [
-                "sha256:743628f2ac6a7c26f5d9223c91ed8ecbba535f506f4b6f558885a8a56a105857",
-                "sha256:ebf2269361b47d97b3b88e696439f6e4cbc607c17c51feb1754f90fb79839158"
+                "sha256:ad33358114df7c9416cdb8fa1eaa5852166c505118717021c6a8c7c7abbd03dd",
+                "sha256:c8ac1ca6772207179ed8003ce7687757c04b0b71536f81e2ac5755c6226458fe"
             ],
-            "version": "==0.17.2"
+            "version": "==0.17.3"
         },
         "mutagen": {
             "hashes": [
@@ -74,28 +74,23 @@
         },
         "pyinstaller": {
             "file": "https://github.com/pyinstaller/pyinstaller/archive/develop.tar.gz",
-            "hashes": [
-                "sha256:0d26411fadbdbbc19210117c8d1ab407fea96e1a65121c7c6ac25dc4610a71b9",
-                "sha256:dca34041c59d14218d3394b6b693ff1ffbb11f64d2e4c3a3a807a11bacc7c318",
-                "sha256:e6ad6fd70afc1a884d55b72ab0c2156ff0532625550ca447032535699b6d2a6b"
-            ],
             "version": "==5.0.dev0"
         },
         "pyinstaller-hooks-contrib": {
             "hashes": [
-                "sha256:7605e440ccb55904cb2a87d72e83642ef176fb7030c77e52ac4d9679bb3d1537",
-                "sha256:ab1d14fe053016fff7b0c6aea51d980bac6d02114b04063b46ef7dac70c70e1e"
+                "sha256:7fb856a81fd06a717188a3175caa77e902035cc067b00b583c6409c62497b23f",
+                "sha256:e02c5f0ee3d4f5814588c2128caf5036c058ba764aaf24d957bb5311ad8690ad"
             ],
             "markers": "python_version >= '3.7'",
-            "version": "==2022.2"
+            "version": "==2023.2"
         },
         "setuptools": {
             "hashes": [
-                "sha256:2347b2b432c891a863acadca2da9ac101eae6169b1d3dfee2ec605ecd50dbfe5",
-                "sha256:e4f30b9f84e5ab3decf945113119649fec09c1fc3507c6ebffec75646c56e62b"
+                "sha256:d0b9a8433464d5800cbe05094acf5c6d52a91bfac9b52bcfc4d41382be5d5d31",
+                "sha256:e197a19aa8ec9722928f2206f8de752def0e4c9fc6953527360d1c36d94ddb2f"
             ],
-            "markers": "python_version >= '3.7'",
-            "version": "==60.9.3"
+            "index": "pypi",
+            "version": "==65.5.1"
         }
     },
     "develop": {}
